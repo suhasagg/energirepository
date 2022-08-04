@@ -50,7 +50,7 @@ A simple game sequence
 Game logs
 
 
-Bid placement logs with Bidding Game state at that timestmap
+Bid placement logs with Bidding Game state at that timestamp
 
 
 ******LogBid Event Emitted******
