@@ -261,3 +261,7 @@ Detailed Game event Logs
   getTransactionReceipt: [Function (anonymous)]
 
 }
+  
+  Game Design makes use of go concurrency patterns and feature full game simulation.
+  
+  
