@@ -4,6 +4,16 @@
 
 2)https://github.com/suhasagg/energirepository/tree/main/Utilscripts
 
+3)https://github.com/suhasagg/hardhateventparsing
+
+Module is tested on 
+
+1)ganache-cli
+
+2)ETHERSCAN_API_KEY=ABC123ABC123ABC123ABC123ABC123ABC1
+KOVAN_RPC_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
+PRIVATE_KEY=0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1
+
 A simple game sequence 
 
 2022/08/04 11:44:22 Placed bid - Player 1
