@@ -1,0 +1,77 @@
+stages:
+  - base
+  - prepare
+  - lint
+  - build
+  - test
+
+cache: &global_cache_configuration
+  paths:
+    - node_modules/
+    - build/
+  policy: pull-push
+
+.merge-request-job:
+  tags: [docker_runner]
+  image: node:12.22-alpine
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+
+yarn-install:
+  dependencies: []
+  needs: []
+  stage: prepare
+  cache:
+    # inherit all global cache Settings
+    <<: *global_cache_configuration
+    policy: push
+  extends: .merge-request-job
+  script:
+    - yarn install
+
+lint:
+  dependencies: []
+  needs: [yarn-install]
+  stage: lint
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache_configuration
+    # override the policy
+    policy: pull
+  extends: .merge-request-job
+  script:
+    - yarn run lint
+
+build:
+  dependencies: []
+  needs: [lint]
+  stage: build
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache_configuration
+    # override the policy
+    # policy: pull
+  extends: .merge-request-job
+  script:
+    - yarn run compile
+
+test:
+  dependencies: []
+  needs: [build]
+  stage: test
+  cache:
+    # inherit all global cache settings
+    <<: *global_cache_configuration
+    # override the policy
+    policy: pull
+  extends: .merge-request-job
+  script:
+    - yarn run ganache
+    - yarn run test
+  artifacts:
+    when: always
+    paths:
+      - .test-results.xml
+    reports:
+      junit: .test-results.xml
+    expire_in: 2 day

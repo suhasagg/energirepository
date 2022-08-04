@@ -1,0 +1,38 @@
+{
+  "name": "energi-governance",
+  "version": "1.0.4",
+  "author": "Energi Core LTD <contact@energi.team>",
+  "license": "MIT",
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.2.6",
+    "eslint": "^6.8.0",
+    "ethereumjs-util": "^6.2.0",
+    "ethers": "^5.0.32",
+    "ethlint": "^1.2.5",
+    "ganache-cli": "6.11.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mocha-multi-reporters": "^1.5.1",
+    "truffle": "5.4.0"
+  },
+  "description": "Here is the Energi Governance repository. This collection of smart contracts forms the basis of governance for the Energi DAO. These contracts are used by the [Energi Core Node](../energi) as a part of core consensus for the Energi blockchain. This repository may be used by any project seeking to interact with the Energi DAO.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint-es": "yarn run eslint truffle-config.js migrations test",
+    "lint-solidity": "yarn run solium -d src",
+    "lint": "yarn run lint-es && yarn run lint-solidity",
+    "compile": "truffle compile",
+    "ganache": "ganache-cli --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef,10000000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdff,200000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcfff,100000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abffff,11000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890afffff,1000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890ffffff,1000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef123456789fffffff,0' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef12345678ffffffff,100000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef1234567fffffffff,100000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef123456ffffffffff,100000000000000000000000' --account='0x1234567890abcdef1234567890abcdef1234567890abcdef12345fffffffffff,10000000000000000000000000' -l 10000000 2>&1 > ganache.log &",
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/energicryptocurrency/energi-governance.git"
+  },
+  "bugs": {
+    "url": "https://github.com/energicryptocurrency/energi-governance/issues"
+  },
+  "homepage": "https://github.com/energicryptocurrency/energi-governance#readme"
+}
