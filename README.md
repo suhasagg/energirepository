@@ -20,7 +20,7 @@ A simple game sequence
 
 2022/08/04 11:44:22 Placed bid - Player 1
 
-2022/08/04 11:44:23 Placed bid - PLayer 2 
+2022/08/04 11:44:23 Placed bid - Player 2 
 
 2022/08/04 11:44:24 Placed bid - Player 1
 
