@@ -11,7 +11,9 @@ Module is tested on
 1)ganache-cli
 
 2)ETHERSCAN_API_KEY=ABC123ABC123ABC123ABC123ABC123ABC1
+
 KOVAN_RPC_URL=https://eth-ropsten.alchemyapi.io/v2/<YOUR ALCHEMY KEY>
+  
 PRIVATE_KEY=0xabc123abc123abc123abc123abc123abc123abc123abc123abc123abc123abc1
 
 A simple game sequence 
