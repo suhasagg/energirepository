@@ -43,6 +43,8 @@ type LogWithdrawal struct {
 }
 
 //Game run code
+//When smart constract is deployed to energy test net and transactions are issued, it will get replicated across validators and bid game state serialised from ethereum tries to disk
+//A new possible kool hack could be to add a new VM based on go (set up using GRPC Server client architecture) so that bidding smart contract can be written in go and not only in solidity  
 func (g *Game) Run(instance *contract.Bid, client *ethclient.Client, owneraddress common.Address, fromaddress1 common.Address, fromaddress2 common.Address, fromaddress3 common.Address, done <-chan interface{}, in <-chan int64) {
 	go func() {
 		counter := 0
