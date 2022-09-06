@@ -1,4 +1,4 @@
-## Energi Core Bidding Game Assignment
+## Bidding Game Based on energi chain
 
 1)https://github.com/suhasagg/energirepository/tree/main/contracts/biddinggame
 
